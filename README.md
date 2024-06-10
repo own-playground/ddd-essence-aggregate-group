@@ -1,5 +1,10 @@
 ## 넥스트스텝 - 도메인 주도 설계의 사실과 오해
 
+### 목적
+
+- [도메인 주도 설계의 사실과 오해](https://edu.nextstep.camp/c/SXgXIKdd) 강의를 바탕으로 구현
+- [강의 예시 코드](https://github.com/eternity-oop/DDD-essence-part2)를 기반으로 구현
+
 ---
 
 ### 구현 내용 및 조건
