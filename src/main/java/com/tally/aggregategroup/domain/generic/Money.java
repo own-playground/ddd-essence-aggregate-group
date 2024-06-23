@@ -11,6 +11,10 @@ public class Money {
 
     private final BigDecimal amount;
 
+    Money() {
+        this.amount = BigDecimal.ZERO; // 기본값으로 초기화
+    }
+
     Money(BigDecimal amount) {
         this.amount = amount;
     }

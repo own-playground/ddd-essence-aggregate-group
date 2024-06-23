@@ -2,18 +2,23 @@ package com.tally.aggregategroup.domain.generic;
 
 import com.tally.aggregategroup.base.annotation.ValueObject;
 import jakarta.persistence.Embeddable;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
 import java.time.LocalTime;
 
+@Getter
 @ValueObject
 @Embeddable
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class TimePeriod {
 
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private final LocalTime startTime;
+    private final LocalTime endTime;
+
+    // 기본 생성자 추가
+    protected TimePeriod() {
+        this.startTime = LocalTime.MIDNIGHT; // 기본값으로 초기화
+        this.endTime = LocalTime.MIDNIGHT;   // 기본값으로 초기화
+    }
 
     public TimePeriod(LocalTime startTime, LocalTime endTime) {
         this.startTime = startTime;
@@ -24,7 +29,7 @@ public class TimePeriod {
         return new TimePeriod(startTime, endTime);
     }
 
-    public boolean contains(LocalTime datetime) {
+     public boolean contains(LocalTime datetime) {
         return (datetime.isAfter(startTime) || datetime.equals(startTime)) &&
                 (datetime.isBefore(endTime) || datetime.equals(endTime));
     }

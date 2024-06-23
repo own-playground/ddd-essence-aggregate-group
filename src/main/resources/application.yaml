@@ -5,9 +5,9 @@ spring:
     password:
     driver-class-name: org.h2.Driver
   jpa:
-    show-sql: true
+#    show-sql: true
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     properties:
       hibernate:
         format_sql: true
