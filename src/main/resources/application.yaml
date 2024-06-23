@@ -14,10 +14,15 @@ spring:
         highlight_sql: true
         dialect: org.hibernate.dialect.H2Dialect
       open-in-view: false
+    defer-datasource-initialization: true
 
   h2:
     console:
       enabled: true
+
+  sql:
+    init:
+      mode: always
 
 logging:
   level:
